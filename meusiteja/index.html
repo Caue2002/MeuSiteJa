@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MeuSiteJá</title>
+<meta name="description" content="MeuSiteJá — sites profissionais, rápidos e sob medida.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<!-- Fontes: Space Grotesk (títulos), Manrope (texto), JetBrains Mono (detalhes tipo "código") -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =====================================================
+     POP-UP DE POLÍTICA — bloqueia o site até o usuário aceitar
+     ===================================================== -->
+<div class="modal-overlay" id="modalPolitica">
+  <div class="modal-caixa">
+    <h2>Política de Prestação de Serviço — MeuSiteJá</h2>
+
+    <h4>Prazos e valores</h4>
+    <p>O desenvolvedor se compromete a cumprir os prazos e valores acordados previamente com o cliente, mediante o pagamento combinado. Qualquer alteração de escopo, prazo ou valor deve ser formalizada entre as partes antes do início ou continuidade do serviço.</p>
+
+    <h4>Entrega do site</h4>
+    <p>O site é entregue somente após o término do prazo combinado, com toda a documentação necessária (acessos, arquivos e instruções de uso) e com as configurações de segurança adequadas, garantindo que o cliente possa utilizá-lo imediatamente, sem impedimentos técnicos.</p>
+
+    <h4>Garantia</h4>
+    <p>É oferecida garantia de <strong>3 meses (90 dias)</strong> após a entrega, cobrindo erros ou falhas de funcionamento decorrentes do desenvolvimento. Esse prazo está alinhado ao artigo 26 do Código de Defesa do Consumidor (Lei nº 8.078/90), que assegura ao consumidor até 90 dias para reclamar de vícios aparentes ou de fácil constatação em serviços de natureza duradoura, contados a partir da entrega do serviço.</p>
+
+    <h4>O que está incluído</h4>
+    <p>O valor combinado refere-se exclusivamente ao <strong>desenvolvimento do site</strong>. Hospedagem, domínio e demais serviços de terceiros não estão inclusos e devem ser contratados separadamente pelo cliente, com orientação do desenvolvedor quando necessário.</p>
+
+    <h4>Serviços adicionais e manutenção</h4>
+    <p>Solicitações fora do que está previsto nesta política — como manutenções corretivas não relacionadas a falhas de desenvolvimento, novas funcionalidades não incluídas no pacote fechado previamente, ou serviços extras como hospedagem e configuração de domínio — serão tratadas como serviço adicional e cobradas à parte, conforme orçamento específico.</p>
+
+    <h4>Disposições gerais</h4>
+    <p>Este acordo respeita o princípio da liberdade contratual previsto no Código Civil (Lei nº 10.406/02), sendo o serviço prestado conforme as condições combinadas entre desenvolvedor e cliente. Recomenda-se formalizar cada projeto com um orçamento e/ou contrato específico antes do início dos trabalhos.</p>
+
+    <label class="aceite-linha">
+      <input type="checkbox" id="checkPolitica">
+      Li e concordo com os termos acima.
+    </label>
+
+    <button class="btn btn-primario" id="btnAceitarPolitica" disabled>Continuar para o site</button>
+  </div>
+</div>
+
+<!-- =====================================================
+     POP-UP DO WHATSAPP
+     ===================================================== -->
+<div class="modal-overlay oculto" id="modalWhats">
+  <div class="modal-caixa" style="max-width:380px;">
+    <button class="modal-fechar" onclick="fecharModal('modalWhats')">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="wa-popup-corpo">
+      <img class="wa-grande" src="assets/whatsapp.png" alt="WhatsApp">
+      <h2 style="font-size:1.05rem;">Fale direto com o desenvolvedor</h2>
+      <p>Clique no botão abaixo para abrir a conversa no WhatsApp e enviar sua ideia, proposta ou pedir um orçamento.</p>
+      <a class="btn btn-primario" id="linkWhatsApp" href="#" target="_blank" rel="noopener">Iniciar conversa com o desenvolvedor</a>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================
+     POP-UP DE PERGUNTAS FREQUENTES (FAQ)
+     ===================================================== -->
+<div class="modal-overlay oculto" id="modalFaq">
+  <div class="modal-caixa">
+    <button class="modal-fechar" onclick="fecharModal('modalFaq')">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h2>Perguntas frequentes</h2>
+
+    <div class="faq-item">
+      <h4>É seguro?</h4>
+      <p>Sim. Os sites são entregues com as configurações de segurança necessárias (certificado SSL, boas práticas de código) para que você e seus clientes usem sem riscos.</p>
+    </div>
+    <div class="faq-item">
+      <h4>É fácil de usar?</h4>
+      <p>Sim. O site é entregue com documentação simples de acessos e uso, para que você consiga navegar e fazer pequenas atualizações sem depender de conhecimento técnico.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Vai atender o que eu espero?</h4>
+      <p>O projeto é alinhado com você desde o início — layout, funcionalidades e prazos são combinados antes do desenvolvimento começar, para garantir que o resultado final corresponda ao combinado.</p>
+    </div>
+    <div class="faq-item">
+      <h4>É responsivo?</h4>
+      <p>Sim. Todos os sites são desenvolvidos para funcionar bem em celulares, tablets e computadores.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Tem garantia?</h4>
+      <p>Sim, 3 meses de garantia após a entrega, cobrindo erros ou falhas de desenvolvimento. Veja todos os detalhes na política de prestação de serviço.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================
+     POP-UP PARA REABRIR A POLÍTICA (consulta livre, sem bloquear o site)
+     ===================================================== -->
+<div class="modal-overlay oculto" id="modalPoliticaVer">
+  <div class="modal-caixa">
+    <button class="modal-fechar" onclick="fecharModal('modalPoliticaVer')">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h2>Política de Prestação de Serviço — MeuSiteJá</h2>
+
+    <h4>Prazos e valores</h4>
+    <p>O desenvolvedor se compromete a cumprir os prazos e valores acordados previamente com o cliente, mediante o pagamento combinado. Qualquer alteração de escopo, prazo ou valor deve ser formalizada entre as partes antes do início ou continuidade do serviço.</p>
+
+    <h4>Entrega do site</h4>
+    <p>O site é entregue somente após o término do prazo combinado, com toda a documentação necessária (acessos, arquivos e instruções de uso) e com as configurações de segurança adequadas, garantindo que o cliente possa utilizá-lo imediatamente, sem impedimentos técnicos.</p>
+
+    <h4>Garantia</h4>
+    <p>É oferecida garantia de <strong>3 meses (90 dias)</strong> após a entrega, cobrindo erros ou falhas de funcionamento decorrentes do desenvolvimento. Esse prazo está alinhado ao artigo 26 do Código de Defesa do Consumidor (Lei nº 8.078/90), que assegura ao consumidor até 90 dias para reclamar de vícios aparentes ou de fácil constatação em serviços de natureza duradoura, contados a partir da entrega do serviço.</p>
+
+    <h4>O que está incluído</h4>
+    <p>O valor combinado refere-se exclusivamente ao <strong>desenvolvimento do site</strong>. Hospedagem, domínio e demais serviços de terceiros não estão inclusos e devem ser contratados separadamente pelo cliente, com orientação do desenvolvedor quando necessário.</p>
+
+    <h4>Serviços adicionais e manutenção</h4>
+    <p>Solicitações fora do que está previsto nesta política — como manutenções corretivas não relacionadas a falhas de desenvolvimento, novas funcionalidades não incluídas no pacote fechado previamente, ou serviços extras como hospedagem e configuração de domínio — serão tratadas como serviço adicional e cobradas à parte, conforme orçamento específico.</p>
+
+    <h4>Disposições gerais</h4>
+    <p>Este acordo respeita o princípio da liberdade contratual previsto no Código Civil (Lei nº 10.406/02), sendo o serviço prestado conforme as condições combinadas entre desenvolvedor e cliente. Recomenda-se formalizar cada projeto com um orçamento e/ou contrato específico antes do início dos trabalhos.</p>
+  </div>
+</div>
+
+<!-- =====================================================
+     POP-UP DE VÍDEO — abre ao clicar em um dos cards de "Modelos e valores"
+     ===================================================== -->
+<div class="modal-overlay oculto" id="modalVideo">
+  <div class="modal-caixa modal-caixa-video">
+    <button class="modal-fechar" onclick="fecharModalVideo()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h2 id="tituloModalVideo">Modelo de site</h2>
+    <div class="video-caixa">
+      <video id="videoModal" controls playsinline>
+        Seu navegador não suporta a reprodução deste vídeo.
+      </video>
+    </div>
+    <div class="video-dica">
+      <p>💡 <strong>Dica para aproveitar melhor:</strong> pause o vídeo quando quiser observar um detalhe com calma, use a barra de progresso para voltar e rever qualquer trecho, e coloque em tela cheia para dar zoom e enxergar de perto fontes, botões, espaçamentos e cores. Assistir em uma tela maior também ajuda a notar melhor os detalhes do layout.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================
+     CABEÇALHO
+     ===================================================== -->
+<header>
+  <div class="header-left">
+    <button class="hamburger" id="btnHamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="logo-sphere" title="Espaço reservado para sua logo"></div>
+  </div>
+
+  <div class="site-nome">Meu<span>Site</span>Já</div>
+
+  <button class="theme-toggle" id="btnTema" aria-label="Alternar tema">
+    <svg id="iconeTema" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/>
+    </svg>
+  </button>
+</header>
+
+<!-- menu que abre ao clicar no hambúrguer -->
+<nav class="menu-lateral" id="menuLateral">
+  <a href="#servicos" onclick="fecharMenu()">Serviços</a>
+  <a href="#sobre" onclick="fecharMenu()">Sobre</a>
+  <a href="#contato" onclick="fecharMenu()">Contato</a>
+</nav>
+
+<!-- =====================================================
+     BANNER (carrossel automático em loop, troca a cada 3s)
+     ===================================================== -->
+<div class="banner" id="banner">
+  <div class="banner-slide ativo">
+    <div><h3>Sites rápidos, modernos e sob medida</h3></div>
+  </div>
+  <div class="banner-slide">
+    <div><h3>Do briefing à entrega, tudo documentado</h3></div>
+  </div>
+  <div class="banner-slide">
+    <div><h3>Seu negócio, com a cara certa online</h3></div>
+  </div>
+</div>
+
+<!-- =====================================================
+     HERO — chamada central para atrair o cliente
+     ===================================================== -->
+<div class="hero">
+  <span class="eyebrow">&lt;ESPECIALISTA EM DESENVOLVIMENTO WEB&gt;</span>
+  <h1>Transformo sua ideia em um site <em>que gera resultado</em></h1>
+  <p>Projetos rápidos, responsivos e pensados para converter visitantes em clientes. Envie sua ideia e receba uma proposta sob medida.</p>
+  <div class="hero-ctas">
+    <a href="#servicos" class="btn btn-primario">Ver serviços e valores</a>
+    <button class="btn btn-secundario" onclick="abrirModal('modalWhats')">Falar no WhatsApp</button>
+  </div>
+</div>
+
+<!-- faixa com mensagens mais apelativas, focadas em conversão/vendas -->
+<div class="faixa-impacto">
+  <span>🚀 Um site profissional pode multiplicar suas vendas</span>
+  <span>⏱ Presença online rápida, sem complicação</span>
+  <span>📈 Mais visibilidade, mais clientes, mais resultado</span>
+</div>
+
+<div class="diferenciais">
+  <div><strong>Entrega documentada</strong><span>Acessos e instruções completos</span></div>
+  <div><strong>Garantia de 3 meses</strong><span>Conforme previsto em lei (CDC)</span></div>
+  <div><strong>100% responsivo</strong><span>Feito para todas as telas</span></div>
+</div>
+
+<!-- =====================================================
+     SERVIÇOS
+     ===================================================== -->
+<section id="servicos">
+  <div class="section-head">
+    <span class="eyebrow">SERVIÇOS</span>
+    <h2>Modelos e valores</h2>
+    <p>Veja exemplos de sites que já desenvolvi e escolha o modelo que mais combina com o seu projeto.</p>
+  </div>
+
+  <div class="browser-frame">
+    <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">meusiteja.com.br/servicos</span></div>
+    <div style="padding:1.6rem;">
+      <div class="servicos-grid">
+
+        <div class="servico-card">
+          <div class="servico-video" onclick="abrirModalVideo('videos/video-institucional.mp4','Modelo — Site Institucional')" role="button" tabindex="0" aria-label="Assistir vídeo do modelo Site Institucional">
+            <video class="video-preview" src="videos/video-institucional.mp4" autoplay muted loop playsinline preload="auto"></video>
+            <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="servico-corpo">
+            <h3>Site Institucional</h3>
+            <p>Ideal para apresentar sua empresa, serviços e formas de contato com uma identidade visual profissional.</p>
+            <span class="servico-preco">a partir de R$ 1.000</span>
+          </div>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-video" onclick="abrirModalVideo('videos/video-landing-page.mp4','Modelo — Landing Page')" role="button" tabindex="0" aria-label="Assistir vídeo do modelo Landing Page">
+            <video class="video-preview" src="videos/video-landing-page.mp4" autoplay muted loop playsinline preload="auto"></video>
+            <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="servico-corpo">
+            <h3>Landing Page</h3>
+            <p>Página única focada em conversão, perfeita para campanhas, lançamentos e captação de leads.</p>
+            <span class="servico-preco">a partir de R$ 500</span>
+          </div>
+        </div>
+
+        <div class="servico-card">
+          <div class="servico-video" onclick="abrirModalVideo('videos/video-loja-virtual.mp4','Modelo — Loja Virtual')" role="button" tabindex="0" aria-label="Assistir vídeo do modelo Loja Virtual">
+            <video class="video-preview" src="videos/video-loja-virtual.mp4" autoplay muted loop playsinline preload="auto"></video>
+            <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="servico-corpo">
+            <h3>Loja Virtual</h3>
+            <p>E-commerce completo com catálogo de produtos, carrinho e integração de pagamento.</p>
+            <span class="servico-preco">a partir de R$ 2.800</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SOBRE
+     ===================================================== -->
+<section id="sobre">
+  <div class="section-head">
+    <span class="eyebrow">SOBRE</span>
+    <h2>Quem desenvolve o seu site</h2>
+  </div>
+  <div class="sobre-conteudo">
+    <div>
+      <p>Sou desenvolvedor web e crio sites institucionais, landing pages e lojas virtuais focados em performance, design responsivo e boas práticas de código.</p>
+      <p>Já desenvolvi projetos para pequenos negócios e profissionais autônomos, sempre priorizando prazos claros e comunicação direta com o cliente do início ao fim do projeto.</p>
+      <div class="skills-lista">
+        <span>Java</span><span>Python</span><span>HTML</span><span>CSS</span><span>JS</span><span>SQL</span><span>React</span><span>IA</span><span>Scrum</span><span>Angular</span>
+      </div>
+    </div>
+    <div class="browser-frame">
+      <div class="browser-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">meusiteja.com.br/sobre</span></div>
+      <div style="padding:1.4rem;">
+        <div class="projetos-grid">
+          <img src="assets/img1.jpg" alt="Projeto desenvolvido 1">
+          <img src="assets/img2.png" alt="Projeto desenvolvido 2">
+          <img src="assets/img3.png" alt="Projeto desenvolvido 3">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CONTATO
+     ===================================================== -->
+<section id="contato">
+  <div class="section-head">
+    <span class="eyebrow">CONTATO</span>
+    <h2>Vamos conversar sobre seu projeto</h2>
+    <p>Escolha o canal que preferir para enviar sua ideia, dúvida ou pedido de orçamento.</p>
+  </div>
+  <div class="contato-grid">
+
+    <!-- ícone do Gmail: abre o cliente de e-mail já preenchido (mailto) -->
+    <div class="contato-card">
+      <div class="icone-box">
+        <img src="assets/gmail.png" alt="Gmail">
+      </div>
+      <h3>E-mail</h3>
+      <p>caueribeiroferreira@gmail.com</p>
+      <button class="btn btn-secundario" onclick="abrirEmail()">Enviar e-mail</button>
+    </div>
+
+    <!-- ícone do WhatsApp: abre o pop-up com o botão de conversa -->
+    <div class="contato-card">
+      <div class="icone-box">
+        <img src="assets/whatsapp.png" alt="WhatsApp">
+      </div>
+      <h3>WhatsApp</h3>
+      <p>Resposta rápida, direto no seu celular.</p>
+      <button class="btn btn-secundario" onclick="abrirModal('modalWhats')">Chamar no WhatsApp</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================================
+     SEÇÃO FINAL — estatísticas de mercado + acesso a FAQ e Política
+     ===================================================== -->
+<section id="vantagens">
+  <div class="section-head">
+    <span class="eyebrow">POR QUE TER SEU SITE?</span>
+    <h2>A vantagem de ter presença online</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="numero">75%</div>
+      <p>das pequenas empresas brasileiras já usam canais digitais para ampliar as vendas.</p>
+      <span class="fonte">Fonte: Sebrae / Exame</span>
+    </div>
+    <div class="stat-card">
+      <div class="numero">+1.200%</div>
+      <p>foi o crescimento das vendas online de micro e pequenas empresas no Brasil nos últimos 5 anos.</p>
+      <span class="fonte">Fonte: Ministério do Desenvolvimento, Indústria, Comércio e Serviços</span>
+    </div>
+  </div>
+
+  <div class="botoes-finais">
+    <button class="btn btn-secundario" onclick="abrirModal('modalFaq')">Perguntas frequentes</button>
+    <button class="btn btn-secundario" onclick="abrirModal('modalPoliticaVer')">Ver política de prestação de serviço</button>
+  </div>
+</section>
+
+<footer>
+  <p style="font-family:'Space Grotesk',sans-serif; color:var(--text); font-size:.95rem; margin-bottom:.3rem;">Desenvolvido por <strong>Cauê Ribeiro Ferreira</strong></p>
+  © 2026 MeuSiteJá — Todos os direitos reservados.
+</footer>
+
+<!-- botão flutuante do WhatsApp -->
+<button class="whatsapp-float" onclick="abrirModal('modalWhats')" aria-label="Falar no WhatsApp">
+  <img src="assets/whatsapp.png" alt="WhatsApp">
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
