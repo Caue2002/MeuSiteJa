@@ -1,11 +1,7 @@
-/* =====================================================
-   MeuSiteJá — Folha de estilos
-   Todas as cores/variáveis de tema estão no topo (:root)
-   ===================================================== */
+/*    MeuSiteJá — Folha de estilos
+   Todas as cores/variáveis de tema estão no topo (:root) */
 
-/* =====================================================
-   VARIÁVEIS DE TEMA (escuro é o padrão / claro no toggle)
-   ===================================================== */
+/*  VARIÁVEIS DE TEMA (escuro é o padrão / claro no toggle) */
 :root{
   --bg: #0B0E1F;
   --bg-elevated: #131735;
@@ -72,9 +68,7 @@ a{color:inherit; text-decoration:none;}
 img{max-width:100%; display:block;}
 button{font-family:inherit; cursor:pointer; border:none;}
 
-/* =====================================================
-   CABEÇALHO — logo, menu hambúrguer, nome do site, tema
-   ===================================================== */
+/*   CABEÇALHO — logo, menu hambúrguer, nome do site, tema */
 header{
   position:fixed; top:0; left:0; width:100%; z-index:500;
   display:flex; align-items:center; justify-content:space-between;
@@ -83,6 +77,7 @@ header{
   border-bottom:1px solid var(--borda);
 }
 .header-left{display:flex; align-items:center; gap:.8rem;}
+.header-right{display:flex; align-items:center; gap:.6rem;}
 
 /* botão hambúrguer (três tracinhos) */
 .hamburger{
@@ -132,9 +127,7 @@ header{
 .menu-lateral a:last-child{border-bottom:none;}
 .menu-lateral a:hover{background:var(--bg-card); color:var(--roxo);}
 
-/* =====================================================
-   BANNER — carrossel automático (troca a cada 3s, em loop)
-   ===================================================== */
+/*  BANNER — carrossel automático (troca a cada 3s, em loop) */
 .banner{
   margin-top:64px; width:100%; height:220px; position:relative; overflow:hidden;
 }
@@ -150,10 +143,8 @@ header{
 .banner-slide h3{font-size:1.3rem;}
 .banner-slide p{font-family:'JetBrains Mono',monospace; font-size:.8rem; opacity:.85; margin-top:.3rem;}
 
-/* =====================================================
-   MOLDURA ESTILO "NAVEGADOR" — elemento de assinatura visual
-   remete ao universo de quem constrói sites
-   ===================================================== */
+/*    MOLDURA ESTILO "NAVEGADOR" — elemento de assinatura visual
+   remete ao universo de quem constrói sites*/
 .browser-frame{
   border:1px solid var(--borda); border-radius:16px; overflow:hidden;
   background:var(--bg-card); box-shadow:var(--sombra); margin:0 auto;
@@ -171,9 +162,7 @@ header{
   color:var(--text-muted); background:var(--bg); padding:.25rem .7rem; border-radius:6px;
 }
 
-/* =====================================================
-   HERO / CHAMADA CENTRAL — conteúdo que atrai o cliente
-   ===================================================== */
+/*   HERO / CHAMADA CENTRAL — conteúdo que atrai o cliente */
 .hero{
   max-width:820px; margin:3.2rem auto 0; padding:0 1.4rem; text-align:center;
 }
@@ -201,9 +190,7 @@ header{
 .diferenciais strong{display:block; font-family:'Space Grotesk',sans-serif; color:var(--roxo); font-size:1rem;}
 .diferenciais span{font-size:.8rem; color:var(--text-muted);}
 
-/* =====================================================
-   SEÇÕES GERAIS
-   ===================================================== */
+/*  SEÇÕES GERAIS */
 section{max-width:1080px; margin:5.5rem auto; padding:0 1.4rem;}
 .section-head{text-align:center; max-width:600px; margin:0 auto 2.6rem;}
 .section-head h2{font-size:1.7rem;}
@@ -275,9 +262,7 @@ section{max-width:1080px; margin:5.5rem auto; padding:0 1.4rem;}
 .contato-card h3{font-size:1rem;}
 .contato-card p{color:var(--text-muted); font-size:.85rem;}
 
-/* =====================================================
-   BOTÃO FLUTUANTE DO WHATSAPP
-   ===================================================== */
+/*  BOTÃO FLUTUANTE DO WHATSAPP */
 .whatsapp-float{
   position:fixed; bottom:1.6rem; right:1.6rem; z-index:400;
   width:58px; height:58px; border-radius:50%;
@@ -292,9 +277,7 @@ section{max-width:1080px; margin:5.5rem auto; padding:0 1.4rem;}
   100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-/* =====================================================
-   POP-UPS (modais) — política inicial, whatsapp e rodapé
-   ===================================================== */
+/*  POP-UPS (modais) — política inicial, whatsapp e rodapé */
 .modal-overlay{
   position:fixed; inset:0; background:var(--overlay); z-index:900;
   display:flex; align-items:center; justify-content:center; padding:1rem;
@@ -325,9 +308,7 @@ section{max-width:1080px; margin:5.5rem auto; padding:0 1.4rem;}
 .wa-popup-corpo{text-align:center;}
 .wa-popup-corpo img.wa-grande{width:52px; height:52px; margin-bottom:.8rem;}
 
-/* =====================================================
-   POP-UP DE VÍDEO — cards de "Modelos e valores" ficam clicáveis
-   ===================================================== */
+/*  POP-UP DE VÍDEO — cards de "Modelos e valores" ficam clicáveis */
 .servico-video{cursor:pointer;}
 .servico-video:hover .play-icon{background:rgba(255,255,255,.28); transform:scale(1.06);}
 
@@ -344,9 +325,7 @@ section{max-width:1080px; margin:5.5rem auto; padding:0 1.4rem;}
 .video-dica p{color:var(--text-muted); font-size:.85rem; line-height:1.65; margin:0;}
 .video-dica strong{color:var(--roxo);}
 
-/* =====================================================
-   SEÇÃO FINAL — estatísticas + botões de FAQ e Política
-   ===================================================== */
+/*  SEÇÃO FINAL — estatísticas + botões de FAQ e Política*/
 .stats-grid{
   display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; margin-bottom:2.4rem;
 }
@@ -368,17 +347,13 @@ section{max-width:1080px; margin:5.5rem auto; padding:0 1.4rem;}
 .faq-item:last-child{border-bottom:none;}
 .faq-item h4{font-size:.92rem; color:var(--text); margin-bottom:.3rem;}
 .faq-item p{font-size:.85rem; color:var(--text-muted); margin:0;}
-/* =====================================================
-   RODAPÉ
-   ===================================================== */
+/* RODAPÉ */
 footer{
   text-align:center; padding:2.4rem 1rem; color:var(--text-muted); font-size:.8rem;
   border-top:1px solid var(--borda); margin-top:3rem;
 }
 
-/* =====================================================
-   RESPONSIVIDADE — dispositivos móveis
-   ===================================================== */
+/*  RESPONSIVIDADE — dispositivos móveis */
 @media(max-width:768px){
   .site-nome{font-size:1rem;}
   .hero h1{font-size:1.55rem;}
@@ -390,4 +365,304 @@ footer{
   .contato-grid{flex-direction:column;}
   .stats-grid{grid-template-columns:1fr;}
   .video-caixa video{max-height:40vh;}
+  .carrinho-drawer-caixa{max-width:100%;}
+}
+
+/*  BANNER — SETAS MANUAIS*/
+.banner-seta{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(6px);
+  border:1.5px solid rgba(255,255,255,0.35);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; z-index:10;
+  opacity:0; pointer-events:none;
+  transition:opacity .25s ease, background .2s ease, transform .2s ease;
+}
+.banner-seta svg{
+  width:18px; height:18px;
+  stroke:var(--azul);
+}
+.banner-seta-esq{ left:16px; }
+.banner-seta-dir{ right:16px; }
+/* setas aparecem ao passar o mouse no banner */
+.banner:hover .banner-seta{
+  opacity:1; pointer-events:auto;
+}
+.banner-seta:hover{
+  background:rgba(255,255,255,0.28);
+  transform:translateY(-50%) scale(1.08);
+}
+
+/* BANNER — BOLINHAS INDICADORAS */
+.banner-dots{
+  position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
+  display:flex; gap:8px; z-index:10;
+}
+.banner-dot{
+  width:10px; height:10px; border-radius:50%;
+  border:2px solid rgba(255,255,255,0.8);
+  background:transparent;
+  cursor:pointer; padding:0;
+  transition:background .3s ease, border-color .3s ease, transform .2s ease;
+}
+.banner-dot.ativo{
+  background:#ffffff;
+  border-color:#ffffff;
+  transform:scale(1.15);
+}
+.banner-dot:hover:not(.ativo){
+  background:rgba(255,255,255,0.4);
+}
+
+/* MENU LATERAL — NOVO (full-height, acompanha o tema) */
+
+/* overlay escurecido atrás do menu */
+.menu-overlay{
+  display:none;
+  position:fixed; inset:0; z-index:498;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(2px);
+}
+.menu-overlay.ativo{ display:block; }
+
+/* painel lateral */
+.menu-lateral{
+  position:fixed; top:0; left:0;
+  width:260px; height:100vh; z-index:499;
+  background:var(--bg-elevated);
+  border-right:1px solid var(--borda);
+  box-shadow:4px 0 32px rgba(0,0,0,0.25);
+  display:flex; flex-direction:column;
+  transform:translateX(-100%);
+  transition:transform .32s cubic-bezier(.4,0,.2,1);
+  overflow:hidden;
+}
+.menu-lateral.aberto{ transform:translateX(0); }
+
+/* topo do menu com título e botão fechar */
+.menu-lateral-topo{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem 1.2rem;
+  border-bottom:1px solid var(--borda);
+  min-height:64px;
+}
+.menu-lateral-titulo{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1rem; font-weight:700;
+  color:var(--roxo);
+  letter-spacing:.03em;
+}
+.menu-fechar-btn{
+  width:34px; height:34px; border-radius:8px;
+  background:var(--bg-card); border:1px solid var(--borda);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:background .2s, border-color .2s;
+}
+.menu-fechar-btn:hover{ border-color:var(--roxo); background:var(--bg); }
+.menu-fechar-btn svg{ width:15px; height:15px; stroke:var(--text); }
+
+/* links do menu */
+.menu-lateral-links{
+  flex:1;
+  display:flex; flex-direction:column;
+  padding:.6rem 0;
+}
+.menu-lateral-links a{
+  display:flex; align-items:center; gap:.85rem;
+  padding:.95rem 1.4rem;
+  font-weight:600; font-size:1rem;
+  color:var(--text);
+  border-left:3px solid transparent;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.menu-lateral-links a svg{
+  width:20px; height:20px;
+  stroke:var(--text-muted);
+  flex-shrink:0;
+  transition:stroke .2s;
+}
+.menu-lateral-links a:hover{
+  background:var(--bg-card);
+  color:var(--roxo);
+  border-left-color:var(--roxo);
+}
+.menu-lateral-links a:hover svg{ stroke:var(--roxo); }
+
+/* rodapé do menu */
+.menu-lateral-rodape{
+  padding:1.1rem 1.4rem;
+  border-top:1px solid var(--borda);
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.85rem; color:var(--text-muted);
+}
+.menu-lateral-rodape strong{ color:var(--roxo); }
+
+/* CARRINHO — BOTÃO NO HEADER */
+.carrinho-btn{
+  width:42px; height:42px; border-radius:10px;
+  background:var(--bg-card); border:1px solid var(--borda);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; cursor:pointer;
+  transition:border-color .2s, background .2s;
+}
+.carrinho-btn:hover{ border-color:var(--roxo); }
+.carrinho-btn svg{ width:19px; height:19px; stroke:var(--text); }
+.carrinho-badge{
+  position:absolute; top:-6px; right:-6px;
+  width:18px; height:18px; border-radius:50%;
+  background:var(--roxo); color:#fff;
+  font-size:.65rem; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  border:2px solid var(--bg-elevated);
+}
+
+/*  BOTÃO "ESCOLHER MODELO" — nos cards de serviço */
+.btn-escolher-modelo{
+  margin-top:.6rem;
+  padding:.7rem 1rem;
+  border-radius:8px;
+  background:var(--gradiente);
+  color:#fff;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.85rem; font-weight:700;
+  border:none; cursor:pointer;
+  width:100%;
+  transition:filter .2s, transform .15s, background .25s;
+  display:flex; align-items:center; justify-content:center; gap:.4rem;
+}
+.btn-escolher-modelo:hover{
+  background:linear-gradient(135deg,#e53e3e,#c53030);
+  transform:translateY(-1px);
+  filter:brightness(1.05);
+}
+
+/* CARRINHO — MODAL*/
+/* =====================================================
+   CARRINHO — MODAL COMO ABA FIXA NO CANTO DIREITO
+   Sempre branca (independente do tema claro/escuro do site),
+   ocupa do topo até embaixo da tela. */
+#modalCarrinho{
+  justify-content:flex-end; align-items:stretch; padding:0;
+}
+.carrinho-drawer-caixa{
+  --carrinho-texto: #1B1B23;
+  --carrinho-texto-muted: #6B7085;
+  --carrinho-borda: rgba(20,20,40,0.10);
+  --carrinho-card: #F5F5FA;
+
+  background:#FFFFFF;
+  color:var(--carrinho-texto);
+  max-width:420px; width:100%; height:100vh; max-height:100vh;
+  border-radius:0; border:none; border-left:1px solid var(--carrinho-borda);
+  box-shadow:-18px 0 45px rgba(15,15,35,.22);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  padding:1.8rem 1.8rem 0;
+  animation:entrarDireita .3s ease;
+}
+@keyframes entrarDireita{
+  from{transform:translateX(30px); opacity:.4;}
+  to{transform:translateX(0); opacity:1;}
+}
+.carrinho-drawer-caixa h2{ color:var(--carrinho-texto); flex-shrink:0; }
+.carrinho-drawer-caixa > p{ color:var(--carrinho-texto-muted) !important; flex-shrink:0; }
+.carrinho-corpo-scroll{ flex:1; overflow-y:auto; padding-bottom:1rem; }
+.carrinho-drawer-caixa .carrinho-rodape{ flex-shrink:0; padding-bottom:1.8rem; }
+.carrinho-drawer-caixa .modal-fechar{
+  background:var(--carrinho-card); border:1px solid var(--carrinho-borda);
+}
+.carrinho-drawer-caixa .modal-fechar svg{ stroke:var(--carrinho-texto); }
+
+.carrinho-drawer-caixa .carrinho-item{
+  background:var(--carrinho-card); border:1px solid var(--carrinho-borda);
+}
+.carrinho-drawer-caixa .carrinho-item-nome{ color:var(--carrinho-texto); }
+.carrinho-drawer-caixa .carrinho-vazio p{ color:var(--carrinho-texto-muted); }
+.carrinho-drawer-caixa .carrinho-rodape{ border-top:1px solid var(--carrinho-borda); }
+.carrinho-drawer-caixa .carrinho-pix-aviso{
+  background:var(--carrinho-card); border:1px solid var(--carrinho-borda); color:var(--carrinho-texto-muted);
+}
+.carrinho-drawer-caixa .carrinho-pix-aviso strong{ color:var(--carrinho-texto); }
+
+.modal-carrinho-caixa{ max-width:480px; }
+
+.carrinho-lista{
+  display:flex; flex-direction:column; gap:.7rem;
+  margin-bottom:1rem;
+}
+.carrinho-item{
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--bg-card); border:1px solid var(--borda);
+  border-radius:10px; padding:.8rem 1rem;
+}
+.carrinho-item-info{ display:flex; flex-direction:column; gap:.2rem; }
+.carrinho-item-nome{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.9rem; font-weight:700; color:var(--text);
+}
+.carrinho-item-preco{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.78rem; color:var(--roxo);
+}
+.carrinho-item-remover{
+  width:28px; height:28px; border-radius:6px;
+  background:transparent; border:1px solid var(--borda);
+  color:var(--text-muted); font-size:.9rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.carrinho-item-remover:hover{
+  background:#fee2e2; border-color:#f87171; color:#dc2626;
+}
+
+.carrinho-vazio{
+  text-align:center; padding:2rem 1rem;
+  display:flex; flex-direction:column; align-items:center; gap:.6rem;
+}
+.carrinho-vazio span{ font-size:2.2rem; }
+.carrinho-vazio p{ font-size:.85rem; color:var(--text-muted); line-height:1.5; }
+
+/* rodapé do modal do carrinho */
+.carrinho-rodape{
+  display:flex; flex-direction:column; gap:.9rem;
+  padding-top:.9rem;
+  border-top:1px solid var(--borda);
+  margin-top:.4rem;
+}
+.carrinho-pix-aviso{
+  display:flex; align-items:center; gap:.65rem;
+  background:var(--bg-card); border:1px solid var(--borda);
+  border-radius:8px; padding:.65rem .9rem;
+  font-size:.8rem; color:var(--text-muted);
+}
+.carrinho-pix-aviso strong{ color:var(--text); }
+.pix-icon{
+  width:22px; height:22px; flex-shrink:0;
+  color:var(--roxo);
+}
+.btn-finalizar{
+  width:100%; justify-content:center;
+  font-size:.95rem;
+}
+
+/* FOOTER — novo layout com coluna do Pix */
+.footer-inner{
+  display:flex; align-items:center; justify-content:center;
+  flex-wrap:wrap; gap:1rem;
+}
+.footer-col-pix{
+  display:flex; align-items:center; justify-content:center; gap:.55rem;
+  font-size:.8rem; color:var(--text-muted);
+  background:var(--bg-card); border:1px solid var(--borda);
+  border-radius:8px; padding:.5rem .7rem;
+}
+.footer-col-pix strong{ color:var(--text); }
+.pix-icon-footer{
+  width:20px; height:20px;
+  color:var(--roxo);
+  flex-shrink:0;
 }

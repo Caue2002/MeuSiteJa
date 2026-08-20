@@ -18,9 +18,7 @@
 </head>
 <body>
 
-<!-- =====================================================
-     POP-UP DE POLÍTICA — bloqueia o site até o usuário aceitar
-     ===================================================== -->
+<!--  POP-UP DE POLÍTICA — bloqueia o site até o usuário aceitar -->
 <div class="modal-overlay" id="modalPolitica">
   <div class="modal-caixa">
     <h2>Política de Prestação de Serviço — MeuSiteJá</h2>
@@ -52,9 +50,7 @@
   </div>
 </div>
 
-<!-- =====================================================
-     POP-UP DO WHATSAPP
-     ===================================================== -->
+<!-- POP-UP DO WHATSAPP-->
 <div class="modal-overlay oculto" id="modalWhats">
   <div class="modal-caixa" style="max-width:380px;">
     <button class="modal-fechar" onclick="fecharModal('modalWhats')">
@@ -69,9 +65,7 @@
   </div>
 </div>
 
-<!-- =====================================================
-     POP-UP DE PERGUNTAS FREQUENTES (FAQ)
-     ===================================================== -->
+<!-- POP-UP DE PERGUNTAS FREQUENTES (FAQ) -->
 <div class="modal-overlay oculto" id="modalFaq">
   <div class="modal-caixa">
     <button class="modal-fechar" onclick="fecharModal('modalFaq')">
@@ -102,9 +96,7 @@
   </div>
 </div>
 
-<!-- =====================================================
-     POP-UP PARA REABRIR A POLÍTICA (consulta livre, sem bloquear o site)
-     ===================================================== -->
+<!-- POP-UP PARA REABRIR A POLÍTICA (consulta livre, sem bloquear o site)-->
 <div class="modal-overlay oculto" id="modalPoliticaVer">
   <div class="modal-caixa">
     <button class="modal-fechar" onclick="fecharModal('modalPoliticaVer')">
@@ -132,9 +124,7 @@
   </div>
 </div>
 
-<!-- =====================================================
-     POP-UP DE VÍDEO — abre ao clicar em um dos cards de "Modelos e valores"
-     ===================================================== -->
+<!--  POP-UP DE VÍDEO — abre ao clicar em um dos cards de "Modelos e valores" -->
 <div class="modal-overlay oculto" id="modalVideo">
   <div class="modal-caixa modal-caixa-video">
     <button class="modal-fechar" onclick="fecharModalVideo()">
@@ -152,9 +142,7 @@
   </div>
 </div>
 
-<!-- =====================================================
-     CABEÇALHO
-     ===================================================== -->
+<!-- CABEÇALHO-->
 <header>
   <div class="header-left">
     <button class="hamburger" id="btnHamburger" aria-label="Abrir menu">
@@ -165,23 +153,56 @@
 
   <div class="site-nome">Meu<span>Site</span>Já</div>
 
-  <button class="theme-toggle" id="btnTema" aria-label="Alternar tema">
-    <svg id="iconeTema" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-      <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/>
-    </svg>
-  </button>
+  <div class="header-right">
+    <!-- Botão do carrinho de compras -->
+    <button class="carrinho-btn" id="btnCarrinho" aria-label="Abrir carrinho" onclick="abrirCarrinho()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="carrinho-badge" id="carrinhoBadge" style="display:none">0</span>
+    </button>
+
+    <button class="theme-toggle" id="btnTema" aria-label="Alternar tema">
+      <svg id="iconeTema" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/>
+      </svg>
+    </button>
+  </div>
 </header>
 
-<!-- menu que abre ao clicar no hambúrguer -->
+<!-- Overlay escurecido atrás do menu — fecha ao clicar -->
+<div class="menu-overlay" id="menuOverlay" onclick="fecharMenu()"></div>
+
+<!-- Menu lateral full-height — abre ao clicar no hambúrguer -->
 <nav class="menu-lateral" id="menuLateral">
-  <a href="#servicos" onclick="fecharMenu()">Serviços</a>
-  <a href="#sobre" onclick="fecharMenu()">Sobre</a>
-  <a href="#contato" onclick="fecharMenu()">Contato</a>
+  <div class="menu-lateral-topo">
+    <span class="menu-lateral-titulo">Menu</span>
+    <button class="menu-fechar-btn" onclick="fecharMenu()" aria-label="Fechar menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="menu-lateral-links">
+    <a href="#servicos" onclick="fecharMenu()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      Serviços
+    </a>
+    <a href="#sobre" onclick="fecharMenu()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      Sobre
+    </a>
+    <a href="#contato" onclick="fecharMenu()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.9A10 10 0 1 1 7.1 2"/><path d="M22 2 11 13"/><path d="M22 2l-6 0 0 6"/></svg>
+      Contato
+    </a>
+  </div>
+  <div class="menu-lateral-rodape">
+    <span>Meu<strong>Site</strong>Já</span>
+  </div>
 </nav>
 
-<!-- =====================================================
-     BANNER (carrossel automático em loop, troca a cada 3s)
-     ===================================================== -->
+<!-- BANNER (carrossel automático em loop, troca a cada 3s)
+     Inclui: setas manuais (aparecem no hover) + bolinhas indicadoras -->
 <div class="banner" id="banner">
   <div class="banner-slide ativo">
     <div><h3>Sites rápidos, modernos e sob medida</h3></div>
@@ -192,11 +213,26 @@
   <div class="banner-slide">
     <div><h3>Seu negócio, com a cara certa online</h3></div>
   </div>
+
+  <!-- Seta esquerda — aparece só ao passar o mouse no banner -->
+  <button class="banner-seta banner-seta-esq" id="bannerSetaEsq" aria-label="Banner anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+
+  <!-- Seta direita — aparece só ao passar o mouse no banner -->
+  <button class="banner-seta banner-seta-dir" id="bannerSetaDir" aria-label="Próximo banner">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+
+  <!-- Bolinhas indicadoras — a do slide atual fica preenchida -->
+  <div class="banner-dots" id="bannerDots">
+    <button class="banner-dot ativo" data-index="0" aria-label="Banner 1"></button>
+    <button class="banner-dot" data-index="1" aria-label="Banner 2"></button>
+    <button class="banner-dot" data-index="2" aria-label="Banner 3"></button>
+  </div>
 </div>
 
-<!-- =====================================================
-     HERO — chamada central para atrair o cliente
-     ===================================================== -->
+<!--  HERO — chamada central para atrair o cliente-->
 <div class="hero">
   <span class="eyebrow">&lt;ESPECIALISTA EM DESENVOLVIMENTO WEB&gt;</span>
   <h1>Transformo sua ideia em um site <em>que gera resultado</em></h1>
@@ -220,9 +256,7 @@
   <div><strong>100% responsivo</strong><span>Feito para todas as telas</span></div>
 </div>
 
-<!-- =====================================================
-     SERVIÇOS
-     ===================================================== -->
+<!-- SERVIÇOS -->
 <section id="servicos">
   <div class="section-head">
     <span class="eyebrow">SERVIÇOS</span>
@@ -244,6 +278,9 @@
             <h3>Site Institucional</h3>
             <p>Ideal para apresentar sua empresa, serviços e formas de contato com uma identidade visual profissional.</p>
             <span class="servico-preco">a partir de R$ 1.000</span>
+            <button class="btn-escolher-modelo" onclick="adicionarCarrinho('Site Institucional','R$ 1.000')">
+              🛒 Escolher modelo
+            </button>
           </div>
         </div>
 
@@ -256,6 +293,9 @@
             <h3>Landing Page</h3>
             <p>Página única focada em conversão, perfeita para campanhas, lançamentos e captação de leads.</p>
             <span class="servico-preco">a partir de R$ 500</span>
+            <button class="btn-escolher-modelo" onclick="adicionarCarrinho('Landing Page','R$ 500')">
+              🛒 Escolher modelo
+            </button>
           </div>
         </div>
 
@@ -268,6 +308,9 @@
             <h3>Loja Virtual</h3>
             <p>E-commerce completo com catálogo de produtos, carrinho e integração de pagamento.</p>
             <span class="servico-preco">a partir de R$ 2.800</span>
+            <button class="btn-escolher-modelo" onclick="adicionarCarrinho('Loja Virtual','R$ 2.800')">
+              🛒 Escolher modelo
+            </button>
           </div>
         </div>
 
@@ -276,9 +319,7 @@
   </div>
 </section>
 
-<!-- =====================================================
-     SOBRE
-     ===================================================== -->
+<!-- SOBRE-->
 <section id="sobre">
   <div class="section-head">
     <span class="eyebrow">SOBRE</span>
@@ -305,9 +346,7 @@
   </div>
 </section>
 
-<!-- =====================================================
-     CONTATO
-     ===================================================== -->
+<!--  CONTATO -->
 <section id="contato">
   <div class="section-head">
     <span class="eyebrow">CONTATO</span>
@@ -339,9 +378,7 @@
   </div>
 </section>
 
-<!-- =====================================================
-     SEÇÃO FINAL — estatísticas de mercado + acesso a FAQ e Política
-     ===================================================== -->
+<!-- SEÇÃO FINAL — estatísticas de mercado + acesso a FAQ e Política -->
 <section id="vantagens">
   <div class="section-head">
     <span class="eyebrow">POR QUE TER SEU SITE?</span>
@@ -367,9 +404,53 @@
   </div>
 </section>
 
+<!--  MODAL DO CARRINHO — lista itens escolhidos + botão finalizar -->
+<div class="modal-overlay oculto" id="modalCarrinho">
+  <div class="modal-caixa modal-carrinho-caixa carrinho-drawer-caixa">
+    <button class="modal-fechar" onclick="fecharCarrinho()">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h2>🛒 Seu carrinho</h2>
+    <p style="font-size:.82rem; color:var(--text-muted); margin-bottom:1.2rem;">Revise os modelos escolhidos e finalize para entrar em contato via WhatsApp.</p>
+
+    <div class="carrinho-corpo-scroll">
+      <div id="carrinhoLista" class="carrinho-lista">
+        <!-- itens inseridos via JS -->
+      </div>
+
+      <div id="carrinhoVazio" class="carrinho-vazio">
+        <span>🛒</span>
+        <p>Seu carrinho está vazio.<br>Escolha um modelo na seção de serviços.</p>
+      </div>
+    </div>
+
+    <div class="carrinho-rodape" id="carrinhoRodape" style="display:none">
+      <div class="carrinho-pix-aviso">
+        <!-- Ícone Pix SVG oficial simplificado -->
+        <svg class="pix-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M112.57 391.19c20.056 0 38.928-7.808 53.12-22l76.693-76.692c5.385-5.384 14.765-5.376 20.14 0l76.989 76.989c14.192 14.192 33.064 22 53.12 22h15.745l-97.138 97.138c-29.813 29.813-78.163 29.813-107.977 0l-97.425-97.435h7.733zM112.57 120.81h-7.733l97.425-97.426c29.814-29.813 78.164-29.813 107.977 0l97.138 97.139h-15.745c-20.056 0-38.928 7.808-53.12 22L262.82 219.21c-5.555 5.555-14.585 5.555-20.14 0l-76.99-76.99c-14.094-14.29-32.966-22.41-53.12-22.41zM22.002 199.818l55.918-55.918h34.65c13.888 0 27.153 5.56 36.978 15.386l76.99 76.989c15.856 15.855 43.14 15.964 59.1 0l76.694-76.694c9.825-9.826 23.09-15.385 36.977-15.385h41.275l55.918 55.918c29.813 29.813 29.813 78.163 0 107.977l-55.918 55.918h-41.275c-13.887 0-27.152-5.56-36.977-15.386l-76.694-76.694c-8.13-8.13-19.028-12.24-29.55-12.24s-21.42 4.11-29.55 12.24l-76.99 76.99c-9.825 9.826-23.09 15.386-36.977 15.386H77.92L22.002 307.795c-29.813-29.814-29.813-78.164 0-107.977z" fill="currentColor"/>
+        </svg>
+        <span>Pagamento realizado <strong>exclusivamente via Pix</strong></span>
+      </div>
+      <button class="btn btn-primario btn-finalizar" id="btnFinalizar" onclick="finalizarCarrinho()">
+        Finalizar pelo WhatsApp
+      </button>
+    </div>
+  </div>
+</div>
+
 <footer>
-  <p style="font-family:'Space Grotesk',sans-serif; color:var(--text); font-size:.95rem; margin-bottom:.3rem;">Desenvolvido por <strong>Cauê Ribeiro Ferreira</strong></p>
-  © 2026 MeuSiteJá — Todos os direitos reservados.
+  <div class="footer-inner">
+    <div class="footer-col-texto">
+      <p style="font-family:'Space Grotesk',sans-serif; color:var(--text); font-size:.95rem; margin-bottom:.3rem;">Desenvolvido por <strong>Cauê Ribeiro Ferreira</strong></p>
+      © 2026 MeuSiteJá — Todos os direitos reservados.
+    </div>
+    <div class="footer-col-pix">
+      <svg class="pix-icon-footer" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" title="Pagamento via Pix">
+        <path d="M112.57 391.19c20.056 0 38.928-7.808 53.12-22l76.693-76.692c5.385-5.384 14.765-5.376 20.14 0l76.989 76.989c14.192 14.192 33.064 22 53.12 22h15.745l-97.138 97.138c-29.813 29.813-78.163 29.813-107.977 0l-97.425-97.435h7.733zM112.57 120.81h-7.733l97.425-97.426c29.814-29.813 78.164-29.813 107.977 0l97.138 97.139h-15.745c-20.056 0-38.928 7.808-53.12 22L262.82 219.21c-5.555 5.555-14.585 5.555-20.14 0l-76.99-76.99c-14.094-14.29-32.966-22.41-53.12-22.41zM22.002 199.818l55.918-55.918h34.65c13.888 0 27.153 5.56 36.978 15.386l76.99 76.989c15.856 15.855 43.14 15.964 59.1 0l76.694-76.694c9.825-9.826 23.09-15.385 36.977-15.385h41.275l55.918 55.918c29.813 29.813 29.813 78.163 0 107.977l-55.918 55.918h-41.275c-13.887 0-27.152-5.56-36.977-15.386l-76.694-76.694c-8.13-8.13-19.028-12.24-29.55-12.24s-21.42 4.11-29.55 12.24l-76.99 76.99c-9.825 9.826-23.09 15.386-36.977 15.386H77.92L22.002 307.795c-29.813-29.814-29.813-78.164 0-107.977z" fill="currentColor"/>
+      </svg>
+    </div>
+  </div>
 </footer>
 
 <!-- botão flutuante do WhatsApp -->
