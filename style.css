@@ -362,18 +362,31 @@ footer{
 @media(max-width:768px){
   .site-nome{font-size:1rem;}
   .hero h1{font-size:1.55rem;}
-  .diferenciais{grid-template-columns:1fr;}
-  .servicos-grid{grid-template-columns:1fr;}
+  .diferenciais{grid-template-columns:repeat(3,1fr); gap:.5rem; padding:0 1rem;}
+  .diferenciais div{padding:.7rem .4rem;}
+  .diferenciais strong{font-size:.76rem;}
+  .diferenciais span{font-size:.64rem;}
+  .servicos-grid{grid-template-columns:repeat(3,1fr); gap:.5rem;}
+  .servico-card:last-child{grid-column:2;}
   .sobre-conteudo{grid-template-columns:1fr;}
   .banner{height:145px;}
   section{margin:2.4rem auto;}
-  .contato-grid{flex-direction:column;}
-  .stats-grid{grid-template-columns:1fr;}
+  .contato-grid{flex-direction:row; gap:.6rem;}
+  .contato-card{min-width:0; padding:1rem .6rem;}
+  .contato-card .icone-box{width:40px; height:40px;}
+  .contato-card h3{font-size:.85rem;}
+  .contato-card p{font-size:.72rem;}
+  .stats-grid{grid-template-columns:repeat(2,1fr); gap:.6rem;}
+  .stat-card{padding:.9rem .6rem;}
+  .stat-card .numero{font-size:1.4rem;}
+  .stat-card p{font-size:.68rem;}
+  .stat-card .fonte{font-size:.58rem;}
   .video-caixa video{max-height:40vh;}
   .banner-slide h3{font-size:1.4rem;}
   .banner-slide > div{padding:.6rem 1.1rem;}
-  /* no mobile, o carrinho e o menu ocupam um pouco menos da metade da tela, não a tela inteira */
-  .carrinho-drawer-caixa{max-width:46%; width:46%;}
+  .faixa-impacto{flex-wrap:nowrap; gap:.5rem; padding:.8rem .6rem;}
+  .faixa-impacto span{font-size:.6rem; gap:.3rem; text-align:center; flex:1; min-width:0;}
+  /* no mobile, o menu ocupa um pouco menos da metade da tela, não a tela inteira */
   .menu-lateral{width:46%;}
 }
 
@@ -584,6 +597,10 @@ footer{
 @keyframes entrarDireita{
   from{transform:translateX(30px); opacity:.4;}
   to{transform:translateX(0); opacity:1;}
+}
+/* no mobile, o carrinho ocupa metade da tela, não a tela inteira (precisa vir depois da regra base acima para funcionar) */
+@media(max-width:768px){
+  .carrinho-drawer-caixa{max-width:50%; width:50%;}
 }
 .carrinho-drawer-caixa h2{ color:var(--carrinho-texto); flex-shrink:0; }
 .carrinho-drawer-caixa > p{ color:var(--carrinho-texto-muted) !important; flex-shrink:0; }
