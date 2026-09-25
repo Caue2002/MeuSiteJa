@@ -250,11 +250,9 @@ function finalizarCarrinho(){
   window.open(url, '_blank', 'noopener');
 }
 
-/* =====================================================
-   WIDGET DE CHAT — "Atendente On-line"
+/*    WIDGET DE CHAT — "Atendente On-line"
    Bot com respostas prontas (sem IA real — funciona 100% no navegador,
-   sem precisar de servidor). Termina sempre com a opção de ir pro WhatsApp.
-   ===================================================== */
+   sem precisar de servidor). Termina sempre com a opção de ir pro WhatsApp. */
 const chatBolha   = document.getElementById('chatBolha');
 const chatPainel  = document.getElementById('chatPainel');
 const chatMsgsEl  = document.getElementById('chatMensagens');
@@ -372,9 +370,7 @@ function finalizarChatWhats(){
   window.open(url, '_blank', 'noopener');
 }
 
-/* =====================================================
-   POP-UP "VER MAIS MODELOS"
-   ===================================================== */
+/* POP-UP "VER MAIS MODELOS" */
 const modalMaisModelos = document.getElementById('modalMaisModelos');
 
 function abrirMaisModelos(){ modalMaisModelos.classList.remove('oculto'); }
@@ -385,9 +381,7 @@ modalMaisModelos.addEventListener('click', e => {
   if(e.target === modalMaisModelos) fecharMaisModelos();
 });
 
-/* =====================================================
-   CALCULADORA DE ORÇAMENTO — wizard de 3 perguntas
-   ===================================================== */
+/* CALCULADORA DE ORÇAMENTO — wizard de 3 perguntas */
 const modalCalculadora = document.getElementById('modalCalculadora');
 const calcBtnAdicionar = document.getElementById('calcBtnAdicionar');
 
