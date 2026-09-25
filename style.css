@@ -362,31 +362,18 @@ footer{
 @media(max-width:768px){
   .site-nome{font-size:1rem;}
   .hero h1{font-size:1.55rem;}
-  .diferenciais{grid-template-columns:repeat(3,1fr); gap:.5rem; padding:0 1rem;}
-  .diferenciais div{padding:.7rem .4rem;}
-  .diferenciais strong{font-size:.76rem;}
-  .diferenciais span{font-size:.64rem;}
-  .servicos-grid{grid-template-columns:repeat(3,1fr); gap:.5rem;}
-  .servico-card:last-child{grid-column:2;}
+  .diferenciais{grid-template-columns:1fr;}
+  .servicos-grid{grid-template-columns:1fr;}
   .sobre-conteudo{grid-template-columns:1fr;}
   .banner{height:145px;}
   section{margin:2.4rem auto;}
-  .contato-grid{flex-direction:row; gap:.6rem;}
-  .contato-card{min-width:0; padding:1rem .6rem;}
-  .contato-card .icone-box{width:40px; height:40px;}
-  .contato-card h3{font-size:.85rem;}
-  .contato-card p{font-size:.72rem;}
-  .stats-grid{grid-template-columns:repeat(2,1fr); gap:.6rem;}
-  .stat-card{padding:.9rem .6rem;}
-  .stat-card .numero{font-size:1.4rem;}
-  .stat-card p{font-size:.68rem;}
-  .stat-card .fonte{font-size:.58rem;}
+  .contato-grid{flex-direction:column;}
+  .stats-grid{grid-template-columns:1fr;}
   .video-caixa video{max-height:40vh;}
   .banner-slide h3{font-size:1.4rem;}
   .banner-slide > div{padding:.6rem 1.1rem;}
-  .faixa-impacto{flex-wrap:nowrap; gap:.5rem; padding:.8rem .6rem;}
-  .faixa-impacto span{font-size:.6rem; gap:.3rem; text-align:center; flex:1; min-width:0;}
-  /* no mobile, o menu ocupa um pouco menos da metade da tela, não a tela inteira */
+  /* no mobile, o carrinho e o menu ocupam um pouco menos da metade da tela, não a tela inteira */
+  .carrinho-drawer-caixa{max-width:46%; width:46%;}
   .menu-lateral{width:46%;}
 }
 
@@ -571,8 +558,7 @@ footer{
 }
 
 /* CARRINHO — MODAL*/
-/* =====================================================
-   CARRINHO — MODAL COMO ABA FIXA NO CANTO DIREITO
+/* CARRINHO — MODAL COMO ABA FIXA NO CANTO DIREITO
    Sempre branca (independente do tema claro/escuro do site),
    ocupa do topo até embaixo da tela. */
 #modalCarrinho{
@@ -597,10 +583,6 @@ footer{
 @keyframes entrarDireita{
   from{transform:translateX(30px); opacity:.4;}
   to{transform:translateX(0); opacity:1;}
-}
-/* no mobile, o carrinho ocupa metade da tela, não a tela inteira (precisa vir depois da regra base acima para funcionar) */
-@media(max-width:768px){
-  .carrinho-drawer-caixa{max-width:50%; width:50%;}
 }
 .carrinho-drawer-caixa h2{ color:var(--carrinho-texto); flex-shrink:0; }
 .carrinho-drawer-caixa > p{ color:var(--carrinho-texto-muted) !important; flex-shrink:0; }
@@ -702,9 +684,7 @@ footer{
   flex-shrink:0;
 }
 
-/* =====================================================
-   WIDGET DE CHAT — "Atendente On-line"
-   ===================================================== */
+/*  WIDGET DE CHAT — "Atendente On-line" */
 .chat-bolha{
   position:fixed; bottom:1.6rem; right:1.6rem; z-index:401;
   width:60px; height:60px; border-radius:50%;
@@ -800,9 +780,8 @@ footer{
   .chat-bolha{ right:1rem; bottom:1rem; }
 }
 
-/* =====================================================
-   BOTÃO DA CALCULADORA — dentro do cabeçalho da seção de Serviços
-   ===================================================== */
+/* BOTÃO DA CALCULADORA — dentro do cabeçalho da seção de Serviços
+*/
 .btn-calculadora{
   margin-top:1rem; padding:.7rem 1.3rem; border-radius:30px;
   background:var(--bg-card); border:1.5px dashed var(--roxo); color:var(--text);
@@ -811,9 +790,8 @@ footer{
 }
 .btn-calculadora:hover{ background:var(--bg-elevated); transform:translateY(-2px); }
 
-/* =====================================================
-   CTA "+5 MODELOS EXCLUSIVOS" — ao final da grade de serviços
-   ===================================================== */
+/* 
+   CTA "+5 MODELOS EXCLUSIVOS" — ao final da grade de serviços */
 .cta-mais-modelos{
   margin-top:1.4rem; width:100%; padding:1.1rem 1.4rem; border-radius:14px;
   background:var(--gradiente); display:flex; align-items:center; justify-content:space-between;
@@ -829,9 +807,8 @@ footer{
 }
 .cta-mais-modelos-seta svg{ width:16px; height:16px; stroke:#fff; }
 
-/* =====================================================
-   POP-UP "VER MAIS MODELOS" — grade 5 modelos extras, quase tela cheia
-   ===================================================== */
+/*  POP-UP "VER MAIS MODELOS" — grade 5 modelos extras, quase tela cheia
+ */
 .modal-mais-modelos-caixa{ max-width:1100px; width:94vw; max-height:92vh; }
 .mais-modelos-grid{
   display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem;
@@ -847,9 +824,8 @@ footer{
   .modal-mais-modelos-caixa{ width:96vw; padding:1.3rem; }
 }
 
-/* =====================================================
-   CALCULADORA DE ORÇAMENTO — wizard de 3 passos
-   ===================================================== */
+/* CALCULADORA DE ORÇAMENTO — wizard de 3 passos
+ */
 .modal-calculadora-caixa{ max-width:520px; }
 .calc-progresso{ display:flex; gap:.5rem; margin-bottom:1.4rem; }
 .calc-progresso-dot{
