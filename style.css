@@ -34,6 +34,23 @@ body.light{
   --overlay: rgba(20,22,50,0.55);
 }
 
+/* Personalização da barra de scroll para todas as telas */
+::-webkit-scrollbar{
+  width:10px;
+  height:10px;
+}
+::-webkit-scrollbar-track{
+  background:var(--bg-elevated);
+}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(135deg, var(--azul-escuro), var(--roxo-escuro));
+  border-radius:10px;
+  border:2px solid var(--bg-elevated);
+}
+::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(135deg, var(--azul), var(--roxo));
+}
+
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
@@ -62,10 +79,13 @@ body{
   background:var(--gradiente); margin-top:1.8rem; padding:1rem 1rem;
   display:flex; flex-wrap:wrap; justify-content:center; gap:2.2rem;
 }
-.faixa-impacto span{
+.faixa-impacto > span{
   color:#000; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.95rem;
   display:flex; align-items:center; gap:.5rem;
 }
+/* controle de frases cheia/curta para desktop/mobile */
+.frase-curta{display:none;}
+.frase-cheia{display:block;}
 h1,h2,h3{font-family:'Space Grotesk',sans-serif; font-weight:700; letter-spacing:-.01em;}
 a{color:inherit; text-decoration:none;}
 img{max-width:100%; display:block;}
@@ -240,6 +260,8 @@ section{max-width:1080px; margin:3.2rem auto; padding:0 1.4rem;}
 .servico-corpo{padding:.8rem; display:flex; flex-direction:column; gap:.35rem; flex:1;}
 .servico-corpo h3{font-size:.88rem;}
 .servico-corpo p{font-size:.76rem; color:var(--text-muted); flex:1;}
+/* alterna entre a descrição completa (desktop) e a resumida (mobile) — ver media query 768px */
+.desc-mobile{display:none;}
 .servico-preco{
   font-family:'JetBrains Mono',monospace; color:var(--roxo); font-weight:600; font-size:.76rem;
 }
@@ -362,19 +384,71 @@ footer{
 @media(max-width:768px){
   .site-nome{font-size:1rem;}
   .hero h1{font-size:1.55rem;}
-  .diferenciais{grid-template-columns:1fr;}
-  .servicos-grid{grid-template-columns:1fr;}
   .sobre-conteudo{grid-template-columns:1fr;}
   .banner{height:145px;}
   section{margin:2.4rem auto;}
-  .contato-grid{flex-direction:column;}
-  .stats-grid{grid-template-columns:1fr;}
   .video-caixa video{max-height:40vh;}
-  .banner-slide h3{font-size:1.4rem;}
+  .banner-slide h3{font-size:0.95rem;}
   .banner-slide > div{padding:.6rem 1.1rem;}
-  /* no mobile, o carrinho e o menu ocupam um pouco menos da metade da tela, não a tela inteira */
-  .carrinho-drawer-caixa{max-width:46%; width:46%;}
+  .hero-ctas{flex-wrap:nowrap;}
+  .hero-ctas .btn{padding:.5rem .8rem; white-space:nowrap;}
+  .section-head h2{white-space:nowrap; font-size:1.2rem;}
+  /* --- SOBRE: título menor e descrição resumida centralizada --- */
+  #sobre .section-head h2{font-size:1rem;}
+  #sobre .desc-desktop{display:none;}
+  #sobre .desc-mobile{display:block; text-align:center; font-size:.85rem; line-height:1.5;}
+  /* --- VANTAGENS: corrigir centralização do título --- */
+  #vantagens .section-head h2{font-size:1.1rem;}
+  /* no mobile, o menu ocupa um pouco menos da metade da tela (o carrinho é ajustado
+     em um bloco próprio no fim do arquivo — precisa vir depois da regra base dele) */
   .menu-lateral{width:46%;}
+
+  /* --- MODELOS: fila de 2 colunas (5 filas para os 10 modelos), texto resumido --- */
+  .servicos-grid{grid-template-columns:repeat(2,1fr); gap:.6rem;}
+  .desc-desktop{display:none;}
+  .desc-mobile{display:none;}
+  .servico-corpo{padding:.6rem;}
+  .servico-corpo h3{font-size:.76rem; line-height:1.25;}
+  .servico-corpo p{font-size:.64rem; line-height:1.3;}
+  .servico-preco{font-size:.64rem;}
+  .btn-escolher-modelo{font-size:.62rem; padding:.5rem .4rem;}
+
+  /* --- SOBRE: lista de tecnologias mais compacta --- */
+  .skills-lista{gap:.35rem;}
+  .skills-lista span{font-size:.65rem; padding:.25rem .55rem;}
+
+  /* --- DIFERENCIAIS: mantém lado a lado (3 colunas), só compacta o texto --- */
+  .diferenciais{gap:.5rem; padding:0 .9rem;}
+  .diferenciais div{padding:.8rem .5rem; text-align:center;}
+  .diferenciais strong{font-size:.8rem; line-height:1.3;}
+  .diferenciais span{font-size:.7rem; line-height:1.3;}
+
+  /* --- FAIXA DE IMPACTO: mantém tudo numa linha só, com rolagem horizontal --- */
+  .faixa-impacto{
+    flex-wrap:nowrap; justify-content:center; overflow-x:auto;
+    gap:1.4rem; padding:.85rem 1.1rem; -webkit-overflow-scrolling:touch;
+    scroll-behavior:smooth;
+  }
+  .faixa-impacto > span{white-space:nowrap; font-size:.70rem;}
+  .frase-cheia{display:none;}
+  .frase-curta{display:block;}
+  /* ocultar a terceira frase no mobile */
+  .faixa-impacto > span:nth-child(3){display:none;}
+
+  /* --- CONTATO: Gmail e WhatsApp lado a lado --- */
+  .contato-grid{flex-wrap:nowrap; gap:.7rem;}
+  .contato-card{min-width:0; padding:1rem .6rem; gap:.5rem;}
+  .contato-card .icone-box{width:40px; height:40px; padding:7px;}
+  .contato-card h3{font-size:.82rem;}
+  .contato-card p{font-size:.68rem; overflow-wrap:break-word;}
+  .contato-card .btn{padding:.6rem .5rem; font-size:.7rem; width:100%; justify-content:center;}
+
+  /* --- ESTATÍSTICAS: lado a lado (2 colunas), texto compacto --- */
+  .stats-grid{gap:.6rem;}
+  .stat-card{padding:1rem .6rem;}
+  .stat-card .numero{font-size:1.35rem;}
+  .stat-card p{font-size:.66rem;}
+  .stat-card .fonte{font-size:.56rem;}
 }
 
 /*  BANNER — SETAS MANUAIS*/
@@ -819,6 +893,8 @@ footer{
 @media(max-width:600px){
   .mais-modelos-grid{ grid-template-columns:1fr; }
   .modal-mais-modelos-caixa{ width:96vw; padding:1.3rem; }
+  .mais-modelos-grid .servico-corpo p{display:none;}
+  .calc-resultado-card p{display:none;}
 }
 
 /* CALCULADORA DE ORÇAMENTO — wizard de 3 passos  */
@@ -854,3 +930,33 @@ footer{
 .calc-resultado-card p{ font-size:.88rem; color:var(--text-muted); margin-bottom:.8rem; line-height:1.6; }
 .calc-resultado-card .servico-preco{ display:block; margin-bottom:1.2rem; font-size:1rem; }
 .calc-resultado-botoes{ display:flex; flex-direction:column; gap:.7rem; }
+
+/* CORREÇÃO DE RESPONSIVIDADE — carrinho no mobile
+    Precisa ficar DEPOIS da regra base ".carrinho-drawer-caixa" (mais acima
+    no arquivo) para conseguir sobrescrever a largura corretamente — antes
+    disso, a regra base (sem media query) sempre vencia e o carrinho acabava
+    ocupando a tela inteira no celular.
+ */
+@media(max-width:768px){
+  .carrinho-drawer-caixa{
+    width:58%; max-width:58%;
+    padding:1.2rem 1rem 0;
+  }
+  .carrinho-drawer-caixa h2{ font-size:1rem; }
+  .carrinho-drawer-caixa > p{ font-size:.72rem; line-height:1.4; }
+  .carrinho-drawer-caixa .modal-fechar{ width:26px; height:26px; top:.85rem; right:.85rem; }
+  .carrinho-drawer-caixa .modal-fechar svg{ width:12px; height:12px; }
+
+  .carrinho-item{ padding:.55rem .6rem; gap:.4rem; }
+  .carrinho-item-nome{ font-size:.76rem; line-height:1.25; }
+  .carrinho-item-preco{ font-size:.66rem; }
+  .carrinho-item-remover{ width:22px; height:22px; font-size:.7rem; flex-shrink:0; }
+
+  .carrinho-vazio{ padding:1.4rem .5rem; }
+  .carrinho-vazio span{ font-size:1.7rem; }
+  .carrinho-vazio p{ font-size:.74rem; }
+
+  .carrinho-pix-aviso{ padding:.5rem .6rem; font-size:.68rem; gap:.45rem; }
+  .pix-icon{ width:17px; height:17px; }
+  .btn-finalizar{ font-size:.76rem; padding:.7rem .6rem; }
+}
