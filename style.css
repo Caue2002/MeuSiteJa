@@ -380,6 +380,9 @@ footer{
 /*  RESPONSIVIDADE — dispositivos móveis */
 @media(max-width:1024px){
   .servicos-grid{grid-template-columns:repeat(2,1fr);}
+  /* --- BANNER: ocultar setas e bolinhas em tablets e mobile (usar swipe) --- */
+  .banner-seta{display:none !important;}
+  .banner-dots{display:none !important;}
 }
 @media(max-width:768px){
   .site-nome{font-size:1rem;}

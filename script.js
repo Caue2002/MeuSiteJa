@@ -76,11 +76,12 @@ btnTema.addEventListener('click', () => {
   aplicarTema(!document.body.classList.contains('light'));
 });
 
-/*   BANNER — carrossel automático + setas manuais + bolinhas */
+/*   BANNER — carrossel automático + setas manuais + bolinhas + swipe em mobile */
 const slides     = document.querySelectorAll('.banner-slide');
 const dots       = document.querySelectorAll('.banner-dot');
 const setaEsq    = document.getElementById('bannerSetaEsq');
 const setaDir    = document.getElementById('bannerSetaDir');
+const banner     = document.getElementById('banner');
 let indiceSlide  = 0;
 let intervalo;
 
@@ -111,6 +112,33 @@ dots.forEach(dot => {
     iniciarIntervalo();
   });
 });
+
+// swipe em mobile/tablet (touch)
+let touchStartX = 0;
+let touchEndX = 0;
+
+banner.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+}, { passive: true });
+
+banner.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].clientX;
+  handleSwipe();
+}, { passive: true });
+
+function handleSwipe(){
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+  
+  if(Math.abs(diff) > swipeThreshold){
+    if(diff > 0){
+      irParaSlide(indiceSlide + 1);
+    } else {
+      irParaSlide(indiceSlide - 1);
+    }
+    iniciarIntervalo();
+  }
+}
 
 /*  POP-UPS GENÉRICOS (whatsapp, FAQ, política) */
 function abrirModal(id){ document.getElementById(id).classList.remove('oculto'); }
