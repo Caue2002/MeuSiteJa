@@ -149,14 +149,27 @@ const checkPolitica = document.getElementById('checkPolitica');
 const btnAceitar    = document.getElementById('btnAceitarPolitica');
 const modalPolitica = document.getElementById('modalPolitica');
 
+// verifica se o usuário já aceitou a política anteriormente
+const politicaAceita = localStorage.getItem('meusiteja-politica-aceita');
+
+if(politicaAceita === 'true'){
+  // já aceitou antes, remove o modal e libera o scroll
+  modalPolitica.classList.add('oculto');
+  document.body.style.overflow = 'auto';
+} else {
+  // primeira vez, bloqueia o scroll e mostra o modal
+  document.body.style.overflow = 'hidden';
+}
+
 checkPolitica.addEventListener('change', () => {
   btnAceitar.disabled = !checkPolitica.checked;
 });
 btnAceitar.addEventListener('click', () => {
+  // salva que o usuário aceitou
+  localStorage.setItem('meusiteja-politica-aceita', 'true');
   modalPolitica.classList.add('oculto');
   document.body.style.overflow = 'auto';
 });
-document.body.style.overflow = 'hidden';
 
 /* POP-UP DE VÍDEO */
 const modalVideo      = document.getElementById('modalVideo');
