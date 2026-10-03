@@ -171,6 +171,31 @@ btnAceitar.addEventListener('click', () => {
   document.body.style.overflow = 'auto';
 });
 
+/*  BANNER DE COOKIES — popup na parte inferior da tela */
+const cookieBanner = document.getElementById('cookieBanner');
+const btnAceitarCookies = document.getElementById('btnAceitarCookies');
+const btnRejeitarCookies = document.getElementById('btnRejeitarCookies');
+
+// verifica se o usuário já fez uma escolha sobre cookies
+const cookieEscolha = localStorage.getItem('meusiteja-cookies-escolha');
+
+if(!cookieEscolha){
+  // ainda não fez escolha, mostra o banner após um pequeno delay
+  setTimeout(() => {
+    cookieBanner.classList.add('visivel');
+  }, 1500);
+}
+
+btnAceitarCookies.addEventListener('click', () => {
+  localStorage.setItem('meusiteja-cookies-escolha', 'aceito');
+  cookieBanner.classList.remove('visivel');
+});
+
+btnRejeitarCookies.addEventListener('click', () => {
+  localStorage.setItem('meusiteja-cookies-escolha', 'rejeitado');
+  cookieBanner.classList.remove('visivel');
+});
+
 /* POP-UP DE VÍDEO */
 const modalVideo      = document.getElementById('modalVideo');
 const videoModal      = document.getElementById('videoModal');
