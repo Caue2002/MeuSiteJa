@@ -443,7 +443,7 @@ footer{
   .contato-card{min-width:0; padding:1rem .6rem; gap:.5rem;}
 
   /* --- BOTÃO DA CALCULADORA: centralizar e ajustar texto no mobile --- */
-  .btn-calculadora{text-align:center; white-space:nowrap; line-height:1.2; padding:.4rem .7rem; font-size:.55rem; display:block; margin-left:auto; margin-right:auto; max-width:90%;}
+  .btn-calculadora{text-align:center; white-space:nowrap; line-height:1.2; padding:.35rem .6rem; font-size:.5rem; display:block; margin-left:auto; margin-right:auto; max-width:95%;}
   .contato-card .icone-box{width:40px; height:40px; padding:7px;}
   .contato-card h3{font-size:.82rem;}
   .contato-card p{font-size:.68rem; overflow-wrap:break-word;}
@@ -519,7 +519,7 @@ footer{
 /* painel lateral */
 .menu-lateral{
   position:fixed; top:0; left:0;
-  width:260px; height:calc(100vh - 2rem); z-index:499;
+  width:260px; height:calc(100vh - 3rem); z-index:499;
   background:var(--bg-elevated);
   border-right:1px solid var(--borda);
   border-bottom:1px solid var(--borda);
@@ -655,7 +655,7 @@ footer{
 
   background:#FFFFFF;
   color:var(--carrinho-texto);
-  max-width:420px; width:100%; height:calc(100vh - 2rem); max-height:calc(100vh - 2rem);
+  max-width:420px; width:100%; height:calc(100vh - 3rem); max-height:calc(100vh - 3rem);
   border-radius:0; border:none; border-left:1px solid var(--carrinho-borda); border-bottom:1px solid var(--carrinho-borda);
   box-shadow:-18px 0 45px rgba(15,15,35,.22);
   display:flex; flex-direction:column;
