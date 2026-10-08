@@ -400,6 +400,10 @@ footer{
   #sobre .section-head h2{font-size:1rem;}
   #sobre .desc-desktop{display:none;}
   #sobre .desc-mobile{display:block; text-align:center; font-size:.85rem; line-height:1.5;}
+  /* --- BOTÃO DA CALCULADORA: texto mais curto e centralizado no mobile --- */
+  .btn-calculadora{ font-size:.75rem; text-align:center; padding:.6rem 1rem; }
+  .btn-text-desktop{ display:none; }
+  .btn-text-mobile{ display:inline; }
   /* --- VANTAGENS: corrigir centralização do título --- */
   #vantagens .section-head h2{font-size:1.1rem;}
   /* no mobile, o menu ocupa um pouco menos da metade da tela (o carrinho é ajustado
@@ -871,6 +875,10 @@ footer{
   transition:background .2s, transform .15s;
 }
 .btn-calculadora:hover{ background:var(--bg-elevated); transform:translateY(-2px); }
+
+/* Texto responsivo do botão da calculadora */
+.btn-text-desktop{ display:inline; }
+.btn-text-mobile{ display:none; }
 
 /* CTA "+5 MODELOS EXCLUSIVOS" — ao final da grade de serviços*/
 .cta-mais-modelos{
